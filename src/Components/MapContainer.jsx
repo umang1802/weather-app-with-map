@@ -33,7 +33,12 @@ export class MapContainer extends Component {
         })
       });
     } else {
-      document.innerHTML = "Geolocation is not supported by this browser.";
+      this.setState({
+        updatedLat: '28.704060',
+        updatedLng: '77.102493'
+      }, () => {
+          this.props.getLatLong(this.state.updatedLat, this.state.updatedLng)
+       })
     }
   }
 
