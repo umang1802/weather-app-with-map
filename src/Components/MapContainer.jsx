@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import Autocomplete from "react-google-autocomplete";
-let INITIAL_LAT = ''
-let INITIAL_LNG = ''
+let INITIAL_LAT = '28.704060'
+let INITIAL_LNG = '77.102493'
 
 const mapStyles = {
   width: '40%',
@@ -37,8 +37,8 @@ export class MapContainer extends Component {
         updatedLat: '28.704060',
         updatedLng: '77.102493'
       }, () => {
-          this.props.getLatLong(this.state.updatedLat, this.state.updatedLng)
-       })
+              this.props.getLatLong(this.state.updatedLat, this.state.updatedLng)
+      })
     }
   }
 
