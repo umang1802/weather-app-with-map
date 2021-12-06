@@ -6,7 +6,7 @@
 // validation and error handling - done
 // icon mapping - done
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import api from "./api/Api"
 import formUrl from './api/formUrl'
 import WeatherCard from "./Components/WeatherCard"
@@ -14,10 +14,7 @@ import MapContainer from "./Components/MapContainer.jsx"
 import './App.css';
 
 function App() {
-  const [cityName, setCityName] = useState('')
   const [weatherData, setWeatherData] = useState('')
-  const [lat, setLat] = useState('')
-  const [lng, setLng] = useState('')
   const [error, setError] = useState('')
   const getWeather = (lat, lng) => {
     // api call get weather data for a city
@@ -35,6 +32,10 @@ function App() {
       console.log('err', err.response.data.message)
     })
   }
+
+  useEffect(() => {
+    getWeather('28.704060', '77.102493')
+  }, [])
 
   return (
     <div claaName="App"> 
